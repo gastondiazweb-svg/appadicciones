@@ -1,3 +1,4 @@
+const phoneDisplay = "+54 9 11 0000 0000";
 const phoneHref = "tel:+5491100000000";
 const whatsappHref = "https://wa.me/5491100000000";
 const hoursLabel = "Lunes a viernes, de 15:00 a 18:00";
@@ -5,45 +6,57 @@ const hoursLabel = "Lunes a viernes, de 15:00 a 18:00";
 const howItWorks = [
   {
     title: "Te contactás",
-    description: "Nos llamás o nos escribís por WhatsApp dentro del horario de atención."
+    description: "Nos llamás o escribís por WhatsApp durante el horario de atención."
   },
   {
-    title: "Te escuchamos",
-    description: "Ordenamos lo que está pasando sin juzgarte, con una mirada humana y clara."
+    title: "Te escuchamos sin juzgar",
+    description: "Ordenamos juntos lo que está pasando en tu casa y qué te preocupa hoy."
   },
   {
-    title: "Te llevás un plan inicial",
-    description: "Terminás la llamada con pasos concretos para hoy y recursos para seguir."
+    title: "Te llevás próximos pasos",
+    description: "Terminás con una guía inicial clara y recursos para seguir acompañado/a."
   }
 ];
 
 const forWho = [
   {
-    title: "Familias desbordadas",
-    description:
-      "Para madres, padres y referentes que sienten que ya probaron todo y no saben cómo seguir."
+    title: "Madres, padres y referentes",
+    description: "Cuando sentís desgaste, miedo o culpa y no sabés cómo intervenir."
   },
   {
-    title: "Personas cercanas",
-    description:
-      "Para quienes conviven con angustia, miedo, culpa o enojo frente a una situación de consumo."
+    title: "Familia o personas cercanas",
+    description: "Cuando el consumo problemático impacta en la convivencia y en el vínculo."
   },
   {
-    title: "Primera orientación",
-    description:
-      "Para quienes todavía no iniciaron tratamiento y necesitan entender cuál es el próximo paso más cuidado."
+    title: "Quienes buscan orientación inicial",
+    description: "Antes de iniciar tratamiento, para comprender opciones y prioridades."
   }
 ];
 
 const receive = [
-  "Una explicación simple sobre qué es la adicción y por qué también afecta al sistema familiar.",
-  "Herramientas para gestionar emociones intensas: angustia, culpa, miedo e ira.",
-  "Orientación para hablar con un hijo o ser querido: qué decir y qué evitar.",
-  "Conceptos en lenguaje claro: baja respuesta emocional, co-adicción y amor responsable.",
-  "Medidas prácticas para el hogar: retirar sustancias, cuidar el manejo del dinero y ordenar límites.",
-  "Criterios para sostener el vínculo sin habilitar conductas que dañan.",
-  "Recomendación de comunidades y centros (ambulatorio o internación) según cada caso.",
-  "Próximos pasos sugeridos para que no vuelvas a quedarte solo/a frente al problema."
+  "Explicación simple sobre la enfermedad y cómo impacta en todo el sistema familiar.",
+  "Herramientas para gestionar angustia, culpa, miedo e ira con más claridad.",
+  "Guía para hablar con tu hijo o ser querido: qué decir y qué evitar.",
+  "Conceptos clave en lenguaje humano: baja respuesta emocional, co-adicción y amor responsable.",
+  "Pasos concretos para el hogar: sustancias, dinero, límites y concesiones.",
+  "Criterios para cuidar el vínculo sin convalidar conductas que hacen daño.",
+  "Sugerencias de comunidades y centros (ambulatorio o internación) según la situación.",
+  "Recomendación de próximos pasos para la familia, porque también necesita acompañamiento."
+];
+
+const faqs = [
+  {
+    question: "¿La llamada es gratuita?",
+    answer: "Sí. La llamada es gratuita dentro del horario de atención publicado en esta página."
+  },
+  {
+    question: "¿Esto reemplaza terapia o tratamiento?",
+    answer: "No. Es una instancia de orientación inicial y contención para definir el siguiente paso."
+  },
+  {
+    question: "¿Qué pasa si hay una urgencia?",
+    answer: "Si hay riesgo de vida o violencia, llamá de inmediato a emergencias o policía local."
+  }
 ];
 
 function PrimaryButton({ href, children }: { href: string; children: React.ReactNode }) {
@@ -80,6 +93,10 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <a href="#inicio" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2">
+        Ir al contenido principal
+      </a>
+
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-slate-50/95 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
           <a href="#inicio" className="text-sm font-semibold tracking-tight text-slate-900 sm:text-base">
@@ -99,24 +116,27 @@ export default function HomePage() {
           <p className="inline-flex rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 sm:text-sm">
             Llamadas gratuitas · {hoursLabel}
           </p>
-          <h1 className="mt-5 text-pretty text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            Una primera llamada puede cambiar cómo enfrentás este momento en tu casa.
+          <h1 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            No estás solo/a: una llamada puede ayudarte a ordenar este momento.
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-xl">
-            Si hay consumo problemático, violencia o angustia constante en tu familia, no tenés que resolverlo solo/a.
-            Te ofrecemos una escucha profesional para ordenar la situación y ayudarte a dar el siguiente paso.
+            Si el consumo problemático está afectando a tu familia, te ofrecemos orientación inicial y contención.
+            Escucha humana, información clara y pasos concretos para hoy.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <PrimaryButton href={phoneHref}>Hacer el primer llamado</PrimaryButton>
             <SecondaryButton href="#como-funciona">Ver cómo funciona</SecondaryButton>
           </div>
+          <p className="mt-4 text-sm text-slate-600">
+            También podés escribir por WhatsApp o llamar al <a className="font-semibold underline" href={phoneHref}>{phoneDisplay}</a>.
+          </p>
         </div>
       </section>
 
       <section id="como-funciona" className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
         <SectionTitle
           title="Cómo funciona"
-          subtitle="Un proceso breve, claro y humano. En pocos minutos podés pasar de la confusión a tener una guía concreta."
+          subtitle="Un primer contacto breve, cercano y claro para que salgas con dirección y no con más incertidumbre."
         />
         <div className="mt-7 grid gap-4 sm:mt-8 md:grid-cols-3">
           {howItWorks.map((item, index) => (
@@ -132,7 +152,7 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
         <SectionTitle
           title="Para quién es"
-          subtitle="Este espacio está pensado para acompañar a quienes hoy sienten que la situación los supera."
+          subtitle="Para personas y familias que necesitan entender qué está pasando y cómo actuar con más cuidado."
         />
         <div className="mt-7 grid gap-4 sm:mt-8 md:grid-cols-3">
           {forWho.map((item) => (
@@ -146,8 +166,8 @@ export default function HomePage() {
 
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
         <SectionTitle
-          title="Qué vas a recibir en la llamada"
-          subtitle="Contenido concreto, en lenguaje simple, para empezar a actuar con más claridad y menos miedo."
+          title="Qué vas a recibir"
+          subtitle="Información útil y aplicable para empezar a tomar decisiones con mayor claridad."
         />
         <ul className="mt-7 grid gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:mt-8 sm:p-7">
           {receive.map((item) => (
@@ -163,8 +183,8 @@ export default function HomePage() {
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 shadow-sm sm:p-7">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Qué NO es este espacio</h2>
           <p className="mt-3 text-base leading-relaxed text-slate-800">
-            No hacemos terapia individual ni grupal. No brindamos tratamiento. Esta llamada es una orientación inicial y
-            contención para ayudarte a decidir con más criterio, y derivarte si hace falta.
+            No hacemos terapia individual ni grupal y no brindamos tratamiento. Esta llamada ofrece orientación inicial
+            y contención para ayudarte a decidir el siguiente paso con más criterio.
           </p>
         </div>
       </section>
@@ -189,6 +209,21 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+        <SectionTitle
+          title="Preguntas frecuentes"
+          subtitle="Respuestas breves para que tengas claro el alcance de esta ayuda inicial."
+        />
+        <div className="mt-7 space-y-3 sm:mt-8">
+          {faqs.map((faq) => (
+            <details key={faq.question} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <summary className="cursor-pointer text-base font-semibold text-slate-900">{faq.question}</summary>
+              <p className="mt-3 text-base leading-relaxed text-slate-700">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Confidencialidad y encuadre</h2>
           <p className="mt-3 text-base leading-relaxed text-slate-700">
@@ -199,12 +234,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="cta-final" className="mx-auto w-full max-w-6xl px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-14 lg:px-8">
+      <section id="cta-final" className="mx-auto w-full max-w-6xl px-4 pb-24 pt-10 sm:px-6 sm:pb-24 sm:pt-14 lg:px-8">
         <div className="rounded-3xl bg-slate-900 p-6 text-white shadow-lg sm:p-10">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">No tenés que pasar por esto en soledad.</h2>
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Hacé hoy ese primer llamado.</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
-            Hacé una primera llamada. Te escuchamos, te orientamos y te ayudamos a definir pasos posibles para cuidar a
-            tu familia y cuidarte vos también.
+            Estamos para escucharte y orientarte. Una conversación puede darte aire, claridad y un camino posible para
+            seguir cuidando a tu familia.
           </p>
           <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">
             <a
@@ -225,6 +260,10 @@ export default function HomePage() {
           <p className="mt-5 text-sm text-slate-300">Llamadas gratuitas · Horario de atención: {hoursLabel}.</p>
         </div>
       </section>
+
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-slate-200 bg-white/95 p-3 backdrop-blur sm:hidden">
+        <PrimaryButton href={phoneHref}>Llamar ahora</PrimaryButton>
+      </div>
 
       <footer className="border-t border-slate-200 py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 text-sm text-slate-600 sm:px-6 lg:px-8">
