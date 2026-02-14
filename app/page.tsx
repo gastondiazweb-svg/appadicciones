@@ -117,7 +117,7 @@ export default function HomePage() {
             Llamadas gratuitas · {hoursLabel}
           </p>
           <h1 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            No estás solo/a: una llamada puede ayudarte a ordenar este momento.
+            No estás solo: una llamada puede ayudarte a ordenar este momento.
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-xl">
             Si el consumo problemático está afectando a tu familia, te ofrecemos orientación inicial y contención.
