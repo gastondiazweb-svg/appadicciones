@@ -55,12 +55,7 @@ export default function SumatePage() {
             >
               Quiero sumarme por WhatsApp
             </a>
-            <a
-              href={emailHref}
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 transition hover:bg-slate-100"
-            >
-              Quiero sumarme por email
-            </a>
+          
           </div>
         </div>
       </section>
