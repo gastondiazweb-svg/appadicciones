@@ -2,6 +2,8 @@ const phoneDisplay = "+54 9 11 0000 0000";
 const phoneHref = "tel:+5491100000000";
 const whatsappHref = "https://wa.me/5491100000000";
 const hoursLabel = "Lunes a viernes, de 15:00 a 18:00";
+const professionalsHref = "/sumate#profesionales";
+
 
 const howItWorks = [
   {
@@ -34,7 +36,7 @@ const forWho = [
 ];
 
 const receive = [
-  "Explicación simple sobre la enfermedad y cómo impacta en todo el sistema familiar.",
+  "Explicación simple sobre la situación y cómo impacta en todo el sistema familiar.",
   "Herramientas para gestionar angustia, culpa, miedo e ira con más claridad.",
   "Guía para hablar con tu hijo o ser querido: qué decir y qué evitar.",
   "Conceptos clave en lenguaje humano: baja respuesta emocional, co-adicción y amor responsable.",
@@ -152,7 +154,7 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
         <SectionTitle
           title="Para quién es"
-          subtitle="Para personas y familias que necesitan entender qué está pasando y cómo actuar con más cuidado."
+          subtitle="Para personas y familias que se encuentren inicialmente en crisis y necesitan una primera orientación."
         />
         <div className="mt-7 grid gap-4 sm:mt-8 md:grid-cols-3">
           {forWho.map((item) => (
@@ -183,8 +185,8 @@ export default function HomePage() {
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 shadow-sm sm:p-7">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Qué NO es este espacio</h2>
           <p className="mt-3 text-base leading-relaxed text-slate-800">
-            No hacemos terapia individual ni grupal y no brindamos tratamiento. Esta llamada ofrece orientación inicial
-            y contención para ayudarte a decidir el siguiente paso con más criterio.
+            No hacemos diagnóstico, no hacemos terapia individual ni grupal y no brindamos tratamiento. Esta llamada
+            ofrece orientación inicial y contención para ayudarte a decidir el siguiente paso con más criterio.
           </p>
         </div>
       </section>
@@ -258,6 +260,22 @@ export default function HomePage() {
             </a>
           </div>
           <p className="mt-5 text-sm text-slate-300">Llamadas gratuitas · Horario de atención: {hoursLabel}.</p>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+        <div className="rounded-3xl border border-brand-200 bg-brand-50 p-6 shadow-sm sm:p-10">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">¿Sos profesional capacitado y querés sumarte?</h2>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">
+            Este espacio está orientado a profesionales capacitados en estos temas que quieran brindar parte de su
+            tiempo de forma gratuita para acompañar a familias en su primera orientación.
+          </p>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">
+            Estamos buscando perfiles profesionales capacitados para fortalecer el acompañamiento a cada familia.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <PrimaryButton href={professionalsHref}>Soy profesional: quiero colaborar</PrimaryButton>
+          </div>
         </div>
       </section>
 
