@@ -53,7 +53,7 @@ export default function SumatePage() {
               rel="noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-700"
             >
-              Quiero sumarme por WhatsApp
+              Comuníquese por WhatsApp
             </a>
           
           </div>
