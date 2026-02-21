@@ -279,6 +279,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+        <div className="rounded-3xl border border-brand-200 bg-brand-50 p-6 shadow-sm sm:p-10">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">¿Sos profesional capacitado y querés sumarte?</h2>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">
+            Este espacio está orientado a profesionales capacitados en estos temas que quieran brindar parte de su
+            tiempo de forma gratuita para acompañar a familias en su primera orientación.
+          </p>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">
+            Estamos buscando perfiles profesionales capacitados para fortalecer el acompañamiento a cada familia.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <PrimaryButton href={professionalsHref}>Soy profesional: quiero colaborar</PrimaryButton>
+          </div>
+        </div>
+      </section>
+
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-slate-200 bg-white/95 p-3 backdrop-blur sm:hidden">
         <PrimaryButton href={phoneHref}>Llamar ahora</PrimaryButton>
       </div>
