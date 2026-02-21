@@ -2,6 +2,9 @@ const phoneDisplay = "+54 9 11 0000 0000";
 const phoneHref = "tel:+5491100000000";
 const whatsappHref = "https://wa.me/5491100000000";
 const hoursLabel = "Lunes a viernes, de 15:00 a 18:00";
+const volunteerHref = "/sumate";
+const professionalsHref = "/sumate#profesionales";
+
 
 const howItWorks = [
   {
@@ -183,7 +186,7 @@ export default function HomePage() {
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 shadow-sm sm:p-7">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Qué NO es este espacio</h2>
           <p className="mt-3 text-base leading-relaxed text-slate-800">
-             No hacemos diagnóstico, no hacemos terapia individual ni grupal y no brindamos tratamiento. Esta llamada
+            No hacemos diagnóstico, no hacemos terapia individual ni grupal y no brindamos tratamiento. Esta llamada
             ofrece orientación inicial y contención para ayudarte a decidir el siguiente paso con más criterio.
           </p>
         </div>
@@ -231,6 +234,21 @@ export default function HomePage() {
             es orientativa y no sustituye indicaciones médicas ni legales. Las decisiones y pasos a seguir son
             responsabilidad del consultante.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+        <div className="rounded-3xl border border-brand-200 bg-brand-50 p-6 shadow-sm sm:p-10">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">¿Querés sumarte para ayudar?</h2>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">
+            Si querés ser voluntario/a y aportar tu tiempo de forma gratuita, podés sumarte desde este acceso.
+            También habilitamos un enlace específico para profesionales que quieran brindar parte de su tiempo
+            para acompañar a familias en esta primera orientación.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <PrimaryButton href={volunteerHref}>Sumarme a Una Voz de Ayuda</PrimaryButton>
+            <SecondaryButton href={professionalsHref}>Soy profesional: quiero colaborar</SecondaryButton>
+          </div>
         </div>
       </section>
 
