@@ -1,3 +1,36 @@
+import type { Metadata } from "next";
+
+const siteUrl = "https://unavozdeayuda.org";
+
+export const metadata: Metadata = {
+  title: "Ayuda para adicciones y consumo problemático en familias",
+  description:
+    "Orientación inicial gratuita para familias y personas afectadas por adicciones: escucha profesional, contención y guía de próximos pasos.",
+  keywords: [
+    "ayuda adicciones",
+    "consumo problemático familiar",
+    "orientación adicciones argentina",
+    "contención para familias",
+    "llamada de ayuda adicciones",
+    "qué hacer ante adicción en casa",
+    "acompañamiento en crisis por consumo"
+  ],
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: "Ayuda para adicciones y consumo problemático en familias",
+    description:
+      "Recibí orientación inicial y contención para actuar con claridad frente al consumo problemático en tu familia.",
+    url: siteUrl
+  },
+  twitter: {
+    title: "Ayuda para adicciones y consumo problemático en familias",
+    description:
+      "Una llamada gratuita de orientación para familias y personas atravesadas por el consumo problemático."
+  }
+};
+
 const phoneDisplay = "+54 9 11 0000 0000";
 const phoneHref = "tel:+5491100000000";
 const whatsappHref = "https://wa.me/5491100000000";
@@ -94,8 +127,66 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 }
 
 export default function HomePage() {
+  const organizationStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Una Voz de Ayuda",
+    url: siteUrl,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Atención y orientación inicial",
+      telephone: "+54-9-11-0000-0000",
+      availableLanguage: ["Spanish"],
+      areaServed: "AR"
+    }
+  };
+
+  const serviceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Orientación inicial en adicciones y consumo problemático",
+    provider: {
+      "@type": "Organization",
+      name: "Una Voz de Ayuda",
+      url: siteUrl
+    },
+    areaServed: "Argentina",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: "+54-9-11-0000-0000"
+      }
+    }
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
       <a href="#inicio" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2">
         Ir al contenido principal
       </a>
@@ -247,7 +338,6 @@ export default function HomePage() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <PrimaryButton href={volunteerHref}>Sumarme a Una Voz de Ayuda</PrimaryButton>
-            <SecondaryButton href={professionalsHref}>Soy profesional: quiero colaborar</SecondaryButton>
           </div>
         </div>
       </section>
