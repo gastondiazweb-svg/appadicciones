@@ -1,6 +1,31 @@
+import type { Metadata } from "next";
+
+const siteUrl = "https://unavozdeayuda.org";
+
+export const metadata: Metadata = {
+  title: "Voluntariado en adicciones: sumate a ayudar familias",
+  description:
+    "Unite como voluntario/a o profesional para acompañar familias atravesadas por consumo problemático con escucha y orientación inicial.",
+  keywords: [
+    "voluntariado adicciones",
+    "profesionales salud mental voluntariado",
+    "ayuda familias consumo problemático",
+    "sumarse como voluntario en adicciones"
+  ],
+  alternates: {
+    canonical: "/sumate"
+  },
+  openGraph: {
+    title: "Voluntariado en adicciones: sumate a ayudar familias",
+    description:
+      "Conocé cómo colaborar gratuitamente en orientación inicial para familias en crisis por consumo problemático.",
+    url: `${siteUrl}/sumate`
+  }
+};
+
 const phoneHref = "tel:+5491100000000";
-const whatsappHref = "https://wa.me/5491100000000";
-const emailHref = "mailto:hola@unavozdeayuda.org?subject=Quiero%20sumarme%20como%20voluntario/a";
+const volunteerEmailHref = "mailto:prueba@unavozdeayuda.org?subject=Quiero%20sumarme%20como%20voluntario/a";
+const professionalEmailHref = "mailto:prueba@unavozdeayuda.org?subject=Soy%20profesional%20y%20quiero%20colaborar";
 const hoursLabel = "Lunes a viernes, de 15:00 a 18:00";
 
 const waysToHelp = [
@@ -48,12 +73,12 @@ export default function SumatePage() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
-              href={whatsappHref}
+              href={volunteerEmailHref}
               target="_blank"
               rel="noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-700"
             >
-              Comuníquese por WhatsApp
+              Comuníquese por email
             </a>
           
           </div>
@@ -91,7 +116,7 @@ export default function SumatePage() {
           </ul>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
-              href={whatsappHref}
+              href={professionalEmailHref}
               target="_blank"
               rel="noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-slate-800"
